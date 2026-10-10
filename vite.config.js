@@ -4,5 +4,6 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/task-tracker/',
+  // Vercel serves from the root; GitHub Pages serves from /task-tracker/
+  base: process.env.VERCEL ? '/' : '/task-tracker/',
 })
